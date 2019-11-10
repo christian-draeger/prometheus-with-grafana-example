@@ -1,0 +1,1 @@
+Simply copy over the dashboard JSON (from grafana -> export -> view JSON) over the ones in this folder. Dockerfile scripts should take care of all variable replacements.

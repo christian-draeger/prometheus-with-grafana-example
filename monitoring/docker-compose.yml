@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+
+  application:
+    build:
+      context: "../application/build/docker"
+      dockerfile: Dockerfile
+    container_name: middleware
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: monitoring-backend
+    volumes:
+      - ./prometheus-config.yml:/etc/prometheus/prometheus.yml
+    command: "--config.file=/etc/prometheus/prometheus.yml"
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    depends_on:
+      - application
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: monitoring-frontend
+    #env_file:
+    #  - ./configuration/grafana-plugins.env
+    volumes:
+      - ./configuration/grafana.ini:/etc/grafana/grafana.ini
+      - ./configuration/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+      - ./configuration/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./configuration/dashboards:/var/lib/grafana/dashboards/
+      - ./configuration/mercedes-logo.svg:/usr/share/grafana/public/img/grafana_icon.svg
+      - ./configuration/mercedes-logo.svg:/usr/share/grafana/public/img/grafana_typelogo.svg
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    depends_on:
+      - prometheus
