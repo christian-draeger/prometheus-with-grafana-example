@@ -1,5 +1,7 @@
+[![Actions Status](https://github.com/christian-draeger/prometheus-with-grafana-example/workflows/Continious%20Integration/badge.svg)](https://github.com/christian-draeger/prometheus-with-grafana-example/actions?query=workflow%3A"Continious+Integration")
+
 Spring-Boot Monitoring Setup with Prometheus and Grafana
-============================
+========================================================
 
 ## Prerequisits
 
