@@ -1,5 +1,5 @@
-Monitoring
-==========
+Spring-Boot Monitoring Setup with Prometheus and Grafana
+============================
 
 ## Prerequisits
 
