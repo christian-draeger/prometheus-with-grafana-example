@@ -16,8 +16,8 @@ fun springBoot(partialModule: String) = "org.springframework.boot:spring-boot-$p
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
-    implementation(springBoot("starter-actuator"))
     implementation(springBoot("starter-web"))
+    implementation(springBoot("actuator-autoconfigure"))
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+")
     implementation("io.github.microutils:kotlin-logging:1.7.2")
     implementation("io.micrometer:micrometer-core")
