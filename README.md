@@ -19,8 +19,8 @@ Spring-Boot Monitoring Setup with Prometheus and Grafana
 run from project root:
 
 ```bash
-./gradlew build && docker-compose up
+./gradlew start
 
 # or using gdub
-gw build && docker-compose up
+gw start
 ```

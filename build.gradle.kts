@@ -6,6 +6,7 @@ plugins {
     val kotlinVersion = "1.3.50"
     kotlin("jvm") version kotlinVersion apply false
     kotlin("plugin.spring") version kotlinVersion apply false
+    id("com.avast.gradle.docker-compose") version "0.9.4"
     id("com.adarshr.test-logger") version "2.0.0"
     id("se.patrikerdes.use-latest-versions") version "0.2.13" apply false
     id("com.github.ben-manes.versions") version "0.27.0" apply false
@@ -55,5 +56,13 @@ allprojects {
         val updateDependencies by creating {
             dependsOn(useLatestVersions)
         }
+    }
+}
+
+tasks {
+
+    val start by creating {
+        dependsOn(":application:dockerBuildImage")
+        dependsOn("composeUp")
     }
 }
