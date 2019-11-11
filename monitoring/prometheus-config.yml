@@ -9,7 +9,7 @@ scrape_configs:
     static_configs:
     - targets: ["prometheus:9090"]
 
-  - job_name: "spring-actuator"
+  - job_name: "middleware"
     metrics_path: "/actuator/prometheus"
     scrape_interval: 5s
     static_configs:

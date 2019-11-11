@@ -39,7 +39,7 @@ allprojects {
                 freeCompilerArgs = listOf("-Xjsr305=strict", "-progressive")
             }
         }
-        
+
         withType<Test>().configureEach {
             shouldRunAfter("useLatestVersions")
             useJUnitPlatform()
@@ -47,7 +47,7 @@ allprojects {
                 events("passed", "skipped", "failed")
             }
         }
-        
+
         val useLatestVersions by getting {
             dependsOn("useLatestVersionsCheck")
         }
@@ -55,6 +55,5 @@ allprojects {
         val updateDependencies by creating {
             dependsOn(useLatestVersions)
         }
-
     }
 }
