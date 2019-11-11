@@ -1,4 +1,4 @@
-rootProject.name = "daimler-ocr-middleware"
+rootProject.name = "prometheus-with-grafana-example"
 
 pluginManagement {
     repositories {

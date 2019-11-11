@@ -35,8 +35,8 @@ services:
       - ./monitoring/configuration/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
       - ./monitoring/configuration/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
       - ./monitoring/configuration/dashboards:/var/lib/grafana/dashboards/
-      - ./monitoring/configuration/customizations/mercedes-logo.svg:/usr/share/grafana/public/img/grafana_icon.svg
-      - ./monitoring/configuration/customizations/mercedes-logo.svg:/usr/share/grafana/public/img/grafana_typelogo.svg
+      - ./monitoring/configuration/customizations/custom-logo.svg:/usr/share/grafana/public/img/grafana_icon.svg
+      - ./monitoring/configuration/customizations/custom-logo.svg:/usr/share/grafana/public/img/grafana_typelogo.svg
     ports:
       - 3000:3000
     restart: unless-stopped
