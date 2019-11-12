@@ -22,6 +22,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:1.7.2")
     implementation("io.micrometer:micrometer-core")
     implementation("io.micrometer:micrometer-registry-prometheus")
+    implementation("com.maxmind.geoip2:geoip2:2.8.0")
 
     // testing
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

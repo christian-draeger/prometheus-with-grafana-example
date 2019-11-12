@@ -62,7 +62,7 @@ allprojects {
 tasks {
 
     val start by creating {
-        dependsOn(":application:dockerBuildImage")
-        dependsOn("composeUp")
+        dependsOn(":application:build")
+        dependsOn(composeUp)
     }
 }

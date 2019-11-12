@@ -15,8 +15,63 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 1,
   "links": [],
   "panels": [
+    {
+      "circleMaxSize": "30",
+      "circleMinSize": 2,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "esMetric": "Count",
+      "gridPos": {
+        "h": 19,
+        "w": 17,
+        "x": 0,
+        "y": 0
+      },
+      "hideEmpty": false,
+      "hideZero": false,
+      "id": 4,
+      "initialZoom": "3",
+      "locationData": "countries",
+      "mapCenter": "Europe",
+      "mapCenterLatitude": 46,
+      "mapCenterLongitude": 14,
+      "maxDataPoints": 1,
+      "mouseWheelZoom": true,
+      "options": {},
+      "showLegend": false,
+      "stickyLabels": true,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
+      "targets": [
+        {
+          "expr": "user_total",
+          "legendFormat": "{{country}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "0,10",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current Users Location",
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "users",
+      "unitSingle": "",
+      "unitSingular": "user",
+      "valueName": "total"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -27,9 +82,9 @@
       "fill": 2,
       "fillGradient": 2,
       "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
+        "h": 19,
+        "w": 7,
+        "x": 17,
         "y": 0
       },
       "id": 2,
@@ -132,5 +187,5 @@
   "timezone": "",
   "title": "Business Metrics",
   "uid": "CRbI2N1Wz",
-  "version": 1
+  "version": 2
 }
