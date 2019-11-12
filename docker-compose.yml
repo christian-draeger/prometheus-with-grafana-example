@@ -37,6 +37,7 @@ services:
       - ./monitoring/configuration/dashboards:/var/lib/grafana/dashboards/
       - ./monitoring/configuration/customizations/custom-logo.svg:/usr/share/grafana/public/img/grafana_icon.svg
       - ./monitoring/configuration/customizations/custom-logo.svg:/usr/share/grafana/public/img/grafana_typelogo.svg
+      - ./monitoring/configuration/customizations/custom-logo.png:/usr/share/grafana/public/img/fav32.png
     ports:
       - 3000:3000
     restart: unless-stopped
