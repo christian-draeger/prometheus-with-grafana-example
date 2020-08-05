@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
     {
@@ -29,9 +28,15 @@
       "datasource": "Prometheus",
       "decimals": 0,
       "esMetric": "Count",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 19,
-        "w": 17,
+        "h": 11,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -46,7 +51,6 @@
       "mapCenterLongitude": 14,
       "maxDataPoints": 1,
       "mouseWheelZoom": false,
-      "options": {},
       "showLegend": false,
       "stickyLabels": false,
       "tableQueryOptions": {
@@ -77,72 +81,28 @@
     },
     {
       "aliasColors": {},
-      "breakPoint": "50%",
-      "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
-      "datasource": "Prometheus",
-      "decimals": 0,
-      "fontSize": "80%",
-      "format": "short",
-      "gridPos": {
-        "h": 19,
-        "w": 7,
-        "x": 17,
-        "y": 0
-      },
-      "id": 6,
-      "interval": null,
-      "legend": {
-        "header": "users",
-        "percentage": true,
-        "percentageDecimals": 1,
-        "show": true,
-        "sideWidth": null,
-        "values": true
-      },
-      "legendType": "Under graph",
-      "links": [],
-      "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "options": {},
-      "pieType": "pie",
-      "repeat": null,
-      "strokeWidth": "2",
-      "targets": [
-        {
-          "expr": "user_total",
-          "format": "time_series",
-          "instant": true,
-          "intervalFactor": 1,
-          "legendFormat": "{{country}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Users per Country",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
-    },
-    {
-      "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
       "decimals": 0,
       "description": "Monitors all requests to the middleware.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 2,
       "gridPos": {
-        "h": 10,
-        "w": 24,
+        "h": 8,
+        "w": 17,
         "x": 0,
-        "y": 19
+        "y": 11
       },
+      "hiddenSeries": false,
       "id": 2,
       "interval": "1m",
       "legend": {
@@ -161,10 +121,8 @@
       "lines": true,
       "linewidth": 4,
       "nullPointMode": "null as zero",
-      "options": {
-        "dataLinks": []
-      },
       "percentage": false,
+      "pluginVersion": "7.1.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -221,10 +179,67 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 11
+      },
+      "id": 6,
+      "interval": null,
+      "legend": {
+        "header": "users",
+        "percentage": true,
+        "percentageDecimals": 1,
+        "show": true,
+        "sideWidth": null,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pieType": "pie",
+      "repeat": null,
+      "strokeWidth": "2",
+      "targets": [
+        {
+          "expr": "user_total",
+          "format": "time_series",
+          "instant": true,
+          "intervalFactor": 1,
+          "legendFormat": "{{country}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Users per Country",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 20,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {

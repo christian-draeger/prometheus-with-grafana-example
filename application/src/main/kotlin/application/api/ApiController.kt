@@ -13,6 +13,6 @@ class ApiController(
     fun getLocations(@RequestParam country: String): String {
         val counter = customMeters.counterByCountry(country)
         counter.increment()
-        return "hello from $country - ${counter.count()}"
+        return "OCR-App call from $country - ${counter.count()}"
     }
 }
