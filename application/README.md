@@ -17,3 +17,6 @@ Create Fat-Jar (standalone jar including embedded tomcat server):
 # jar file will be placed in ./build/libs
 ./gradlew bootJar
 ```
+
+####Sanity and Health checks
+We use [actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html) to get health-checks and application relevant metrics.
