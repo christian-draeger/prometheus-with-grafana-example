@@ -62,7 +62,6 @@ allprojects {
 tasks {
 
     val start by creating {
-        dependsOn(":application:build")
-        dependsOn(composeUp)
+        dependsOn(":application:build", composeUp)
     }
 }
