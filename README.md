@@ -10,6 +10,17 @@ Spring-Boot Monitoring Setup with Prometheus and Grafana
 * docker-compose installed
 
 ## TL;DR
+
+### Automated Demo
+you can watch a demo running in your Browser
+```bash
+# it will run a demo in chrome browser
+./gradlew build
+
+# if you want to use another browser try (firefox,opera,safari,edge)
+./gradlew build -Dbrowser=firefox
+```
+
 ### Start all services (Middleware & Monitoring)
 run from project root:
 

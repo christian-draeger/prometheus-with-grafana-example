@@ -58,7 +58,9 @@ dependencies {
 
     tasks {
         test {
-            dependsOn(":start")
+            dependsOn(":composeUp")
+            finalizedBy(":composeDown")
+            systemProperty("browser", System.getProperty("browser"))
         }
     }
 }
