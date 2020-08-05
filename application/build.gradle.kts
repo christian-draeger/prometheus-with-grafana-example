@@ -18,6 +18,7 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(springBoot("starter-web"))
     implementation(springBoot("actuator-autoconfigure"))
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+")
     implementation("io.github.microutils:kotlin-logging:1.7.2")
     implementation("io.micrometer:micrometer-core")
@@ -29,8 +30,6 @@ dependencies {
         exclude(module = "mockito-core")
     }
     testImplementation("org.junit.jupiter:junit-jupiter")
-    testImplementation("it.skrape:skrapeit-mockmvc:+")
-    testImplementation("io.strikt:strikt-core:0.21.1")
     testImplementation("io.mockk:mockk:1.9.3")
 }
 

@@ -9,21 +9,17 @@ Spring-Boot Monitoring Setup with Prometheus and Grafana
 * docker installed
 * docker-compose installed
 
-#### Recommended
-
-* [gdub](https://github.com/dougborg/gdub) installed
-    * installation via brew: `brew install gdub`
-    * installation via mac-ports: `sudo port install gdub`
-
-
-## TL;DR - Start All Services (Middleware & Monitoring)
+## TL;DR
+### Start all services (Middleware & Monitoring)
 run from project root:
 
 ```bash
 ./gradlew start
+```
 
-# or using gdub
-gw start
+### Stop all services
+```bash
+./gradlew composeDown
 ```
 
 ## Development History and Functional Requirements
