@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 class ApiController(
     val customMeters: CustomMeters
 ) {
-    @GetMapping("/hello")
+    @GetMapping("/example")
     fun getLocations(@RequestParam country: String): String {
         val counter = customMeters.counterByCountry(country)
         counter.increment()
