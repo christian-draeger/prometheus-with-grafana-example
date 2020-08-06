@@ -11,6 +11,12 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+repositories {
+    maven {
+        url = uri("https://jitpack.io")
+    }
+}
+
 fun springBoot(partialModule: String) = "org.springframework.boot:spring-boot-$partialModule"
 
 dependencies {
@@ -31,6 +37,8 @@ dependencies {
     }
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("io.mockk:mockk:1.9.3")
+    testImplementation("com.github.skrapeit:skrape.it:3ac09c501f")
+
 }
 
 tasks {
