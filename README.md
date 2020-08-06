@@ -75,4 +75,10 @@ All needed tools and the middleware itself can be started conveniently with one 
 ```
 and could thereby be easily deployed to any kind of docker container orchestration like Kubernetes.
 
+After spinning-up everything the service will be accessible as follows:
 
+* [Middleware](http://localhost:8080)
+* [Monitoring](http://localhost:3000)
+* [Time Series Database](http://localhost:9090)
+
+###
