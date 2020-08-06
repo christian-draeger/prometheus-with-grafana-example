@@ -80,5 +80,3 @@ After spinning-up everything the service will be accessible as follows:
 * [Middleware](http://localhost:8080)
 * [Monitoring](http://localhost:3000)
 * [Time Series Database](http://localhost:9090)
-
-###

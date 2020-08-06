@@ -35,7 +35,6 @@ class SystemController(
     private fun UL.dashboardLink(text: String, dashboard: String) = li {
         a {
             href = "$grafanaUrl/d/$dashboard"
-            target = "_blank"
             +text
         }
     }
