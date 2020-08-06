@@ -80,3 +80,9 @@ After spinning-up everything the service will be accessible as follows:
 * [Middleware](http://localhost:8080)
 * [Monitoring](http://localhost:3000)
 * [Time Series Database](http://localhost:9090)
+
+### Architecture
+We chose a classical client server architecture including a middleware to handle the communication to 3rd parties and abstract functionalities from the App.
+![architektur-diagramm](architektur-diagramm.png)
+
+### Testing & Continuous Integration
