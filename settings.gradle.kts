@@ -6,4 +6,4 @@ pluginManagement {
     }
 }
 
-include("application", "monitoring", "systemTests")
+include("application", "systemTests")
