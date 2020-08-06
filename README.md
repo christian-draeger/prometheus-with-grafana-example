@@ -25,7 +25,7 @@ you can watch a demo running in your Browser
 run from project root:
 
 ```bash
-./gradlew start
+./gradlew composeUp
 ```
 
 ### Stop all services
@@ -77,12 +77,59 @@ and could thereby be easily deployed to any kind of docker container orchestrati
 
 After spinning-up everything the service will be accessible as follows:
 
-* [Middleware](http://localhost:8080)
-* [Monitoring](http://localhost:3000)
-* [Time Series Database](http://localhost:9090)
+* [Middleware --> http://localhost:8080](http://localhost:8080)
+* [Monitoring --> http://localhost:3000](http://localhost:3000)
+* [Time Series Database --> http://localhost:9090](http://localhost:9090)
 
-### Architecture
+#### Auto-Check for latest dependency and plugin versions
+```
+./gradlew dependencyUpdates
+```
+
+### Development
+#### Architecture
 We chose a classical client server architecture including a middleware to handle the communication to 3rd parties and abstract functionalities from the App.
+
 ![architektur-diagramm](architektur-diagramm.png)
 
+####Sanity and Health checks
+We use [actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html) to get health-checks and application relevant metrics.
+health check: http://localhost:8080/actuator/health
+
+### Create a deployable
+Create Fat-Jar (standalone jar including embedded tomcat server):
+```bash
+# jar file will be placed in ./build/libs
+./gradlew bootJar
+```
+
+To create a deployable that fits consistently into different infrastructures and is easy to use
+a Docker Image including the Fat-Jar can be build via:
+```bash
+# docker file will be placed in ./build/docker
+./gradlew dockerBuildImage
+```
+
 ### Testing & Continuous Integration
+We will build the application on every push to master (including the execution of all automated tests) and publish a docker image.
+A working CI config for GitHub actions can be found in the [.github/workflows/gradle.yml](./.github/workflows/gradle.yml) file.
+
+#### Run all tests
+```bash
+./gradlew build
+```
+
+#### Unit & Integration Tests
+They are part of the application module and verify the fulfillment of requirements in a strict scope.
+
+#### System Tests
+The System Tests / End2End tests will start all components via docker-compose during a test run.
+We use them to verify if the configuration between the different components of the middleware (middleware, monitoring, time series database) are working correctly.
+The automated test cases are located in the systemTest module.
+The system test will remote controll a browser to verify requirements, the default is Chrome.
+
+##### Run with different browser 
+######(supported options: chrome, chrome-headless, firefox, firefox-headless, opera, safari, edge, ie)
+```bash
+./gradlew build -Dbrowser=firefox
+```
