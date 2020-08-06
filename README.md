@@ -13,6 +13,7 @@ Spring-Boot Monitoring Setup with Prometheus and Grafana
 
 ### Automated Demo
 you can watch a demo running in your Browser
+
 ```bash
 # it will run a demo in chrome browser
 ./gradlew build
@@ -40,6 +41,7 @@ run from project root:
 ##### Server-Framework
 We decided to use Spring-Boot over other Frameworks because it has a wide distribution, is a mature technology and has a very extensive community and documentation. Since it is de facto an industry standard at the moment, this decision should ensure that the further development and maintenance of the application should not be a problem for a wide range of developers.
 All Frameworks that have been evaluated and would have been a good fit for the project are:
+
 * Spring-Boot
 * Ktor
 * Quarkus
@@ -51,6 +53,7 @@ To have the possibility to create date agnostic / time-based reports in the futu
 A time series database (TSDB) is a software system that is optimized for storing and serving time series through associated pairs of time(s) and value(s).
 
 Evaluated TSDBs are:
+
 * [Prometheus](https://en.wikipedia.org/wiki/Prometheus_(software))
 * [InfluxDB](https://en.wikipedia.org/wiki/InfluxDB)
 * [Graphite](https://en.wikipedia.org/wiki/Graphite_(software))
@@ -65,15 +68,12 @@ We use [git](https://git-scm.com/) as our version control system of choice. The 
 
 #### Creation of initial Project setup
 The initial Project setup is a Gradle multi module project consisting of
+
 * the [application](./application/README.md) module, that is representing the middleware
 * the [monitoring](./monitoring/README.md) module, where all grafana and prometheus specifics live 
 * the [systemTests](./systemTests/README.md) module, where the End-to-End tests are located to verify that the middleware is working properly with the monitoring
 
-All needed tools and the middleware itself can be started conveniently with one command via docker-compose:
-```bash
-./gradlew start
-```
-and could thereby be easily deployed to any kind of docker container orchestration like Kubernetes.
+All needed tools and the middleware itself can be started conveniently with one command via docker-compose and could thereby be easily deployed to any kind of docker container orchestration like Kubernetes.
 
 After spinning-up everything the service will be accessible as follows:
 
@@ -92,21 +92,25 @@ We chose a classical client server architecture including a middleware to handle
 
 ![architektur-diagramm](architektur-diagramm.png)
 
-####Sanity and Health checks
+#### Sanity and Health checks
 We use [actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html) to get health-checks and application relevant metrics.
 health check: http://localhost:8080/actuator/health
 
 ### Create a deployable
+A build will automatically trigger the cration of a deployable build artifact, but it is still possible to create them explicitly.
+
 Create Fat-Jar (standalone jar including embedded tomcat server):
+
 ```bash
-# jar file will be placed in ./build/libs
+# jar file will be placed in ./application/build/libs
 ./gradlew bootJar
 ```
 
 To create a deployable that fits consistently into different infrastructures and is easy to use
 a Docker Image including the Fat-Jar can be build via:
+
 ```bash
-# docker file will be placed in ./build/docker
+# docker file will be placed in ./application/build/docker
 ./gradlew dockerBuildImage
 ```
 
