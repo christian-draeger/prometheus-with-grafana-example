@@ -16,7 +16,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build -Dbrowser=chrome-headless
     - name: Publish middleware to Docker Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: christian-draeger/prometheus-with-grafana-example/middleware
         username: ${{ github.actor }}
